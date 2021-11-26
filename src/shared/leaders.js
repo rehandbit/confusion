@@ -29,7 +29,7 @@ export const LEADERS = [
    {
      id: 3,
      name: 'Rehan faraz',
-     image: '/assets/images/rehan.png',
+     image: '/assets/images/alberto.png',
      designation: 'System Engineer',
      abbr: 'EC',
      featured: true,
