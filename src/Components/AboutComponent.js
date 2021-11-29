@@ -3,11 +3,10 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 import { LEADERS } from '../shared/leaders';
 
-function About() {
 
 // here i have pulling data directly from LEADERS from leaders.js
 // i take leaderssss const because there is already leaders , leader in another file in order get out of confusion i changed name to leaderssss and mapping directly into LEADERS
-
+function About() {
     const leaderssss = LEADERS.map((leadere) => {
         return (
            <Media tag="li">
