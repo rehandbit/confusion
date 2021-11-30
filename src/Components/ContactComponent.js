@@ -35,7 +35,6 @@ import { Breadcrumb, BreadcrumbItem,  Col, Form, FormGroup, Input, Label, Button
             this.setState ({
                 [name] : value
             })
-
         }
 
         handleSubmit(event) {
