@@ -4,6 +4,12 @@ import { Breadcrumb, BreadcrumbItem,  Col, Row,  Label, Button } from 'reactstra
 import { Control, LocalForm, Errors } from 'react-redux-form'
 
 
+const required = (val) => val && val.length;
+const maxLength = (len) => (val) =>!(val) || (val.length <= len);
+const minLenght = (len) => (val) => val && (val.length >= len);
+const isNumber = (val) => !isNaN(Number(val));
+const validEmail = (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val);
+
     class  Contact extends Component {
         constructor(props) {
             super(props)
@@ -65,26 +71,30 @@ import { Control, LocalForm, Errors } from 'react-redux-form'
                                 <Row className="form-group">
                                     <Label htmlFor="firstName" md={2}>First Name</Label>
                                     <Col md={10}>
-                                        <Control.text className="form-control" model=".firstName" id="firstName" name="firstName" placeholder="First Name" />
+                                        <Control.text className="form-control" model=".firstName" id="firstName" name="firstName" placeholder="First Name" validators={{required, minLenght: minLenght(3), maxLength: maxLength(15)}}/>
+                                        <Errors className="text-danger" model=".firstName" show="touched" messages={{reuired: 'Required',minLenght: 'Must be greater than 2 characters', maxLength: 'must be 15 characters or less'}} />
                                     </Col>
                                 </Row>
                                 <Row className="form-group">
                                     <Label htmlFor="lastName" md={2}>Last Name</Label>
                                     <Col md={10}>
-                                        <Control.text className="form-control" model=".lastName" id="lastName" name="lastName" placeholder="Last Name" />
+                                        <Control.text className="form-control" model=".lastName" id="lastName" name="lastName" placeholder="Last Name" validators={{required, minLenght: minLenght(3), maxLength: maxLength(15)}}/>
+                                        <Errors className="text-danger" model=".lastName" show="touched" messages={{reuired: 'Required',minLenght: 'Must be greater than 2 characters', maxLength: 'must be 15 characters or less'}} />
                                     </Col>
                                 </Row>
                                 <Row className="form-group">
                                     <Label htmlFor="telNum" md={2}>Telephone No.</Label>
                                     <Col md={10}>
-                                        <Control.text className="form-control" model=".telNum" id="telNum" name="telNum" placeholder="Telephone No." />
+                                        <Control.text className="form-control" model=".telNum" id="telNum" name="telNum" placeholder="Telephone No." validators={{required, minLenght: minLenght(10), maxLength: maxLength(13), isNumber}} />
+                                        <Errors className="text-danger" model=".telNum" show="touched" messages={{reuired: 'Required',minLenght: 'Must be greater than 2 characters', maxLength: 'must be 15 characters or less', isNumber: 'must be 10 number'}} />
                                     </Col>
                                 </Row>
                                 <Row className="form-group">
                                     <Label htmlFor="email" md={2}>Email</Label>
                                     <Col md={10}>
-                                        <Control.text className="form-control" model=".email" id="email" name="email" placeholder="Email" />
-                                    </Col>
+                                        <Control.text className="form-control" model=".email" id="email" name="email" placeholder="Email"  validators={{required, validEmail}}/>
+                                    </Col> <Errors className="text-danger" model=".email" show="touched" messages={{required: 'Required', validEmail: 'Invalid Email Address'}} />
+
                                 </Row>
                                 <Row className="form-group">
                                     <Col md={{size: 6, offset: 2}}>
