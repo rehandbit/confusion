@@ -1,4 +1,4 @@
 export const ADD_COMMENT = 'ADD_COMMENT'
-export const ADD_DISHES = 'ADD-DISHES'
-export const FAILED_DISHES = 'FAILED_DISHES'
 export const LOADING_DISHES = 'LOADING_DISHES'
+export const FAILED_DISHES = 'FAILED_DISHES'
+export const ADD_DISHES = 'ADD-DISHES'

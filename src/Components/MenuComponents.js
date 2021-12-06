@@ -34,7 +34,8 @@ import { Loading } from './LoadingComponent';
 								</div>
 							</div>
 						)
-					} else if(props.dishes.errMess) {
+					} 
+					else if(props.dishes.errMess) {
 						return(
 							<div className="container">
 								<div className="row">
@@ -42,7 +43,8 @@ import { Loading } from './LoadingComponent';
 								</div>
 							</div>
 						)
-					} else 
+					} 
+					else 
 						return (
 							<div className="container" >
 								<div className="row">
