@@ -127,8 +127,7 @@ class CommentForm extends Component {
                     </div>
                 </div>
             )
-        }
-        else if(props.errMess) {
+        } else if(props.errMess) {
             return(
                 <div className="container">
                     <div className="row">
@@ -136,8 +135,7 @@ class CommentForm extends Component {
                     </div>
                 </div>
             )
-        }
-        else if (props.dish != null) 
+        } else if (props.dish != null) 
         return(
             <div className="container">
                 <div className="row">

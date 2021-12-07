@@ -7,13 +7,11 @@ function RenderCard({item, isLoading, errMess}) {
       return (
          <Loading />
       )
-   } 
-   else if(errMess) {
+   } else if(errMess) {
       return(
          <h4>{errMess}</h4>
       )
-   }
-   else 
+   } else 
       return (
          <Card>
             <CardImg src={item.image} alt={item.name} />
